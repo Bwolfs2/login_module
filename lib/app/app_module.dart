@@ -1,7 +1,7 @@
-import 'package:loginmodule/app/app_controller.dart';
+import 'package:login_module/app/app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
-import 'package:loginmodule/app/app_widget.dart';
+import 'package:login_module/app/app_widget.dart';
 
 import 'modules/login/login_module.dart';
 

@@ -1,4 +1,4 @@
-# loginmodule
+# login_module
 
 A new Flutter module.
 
