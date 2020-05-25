@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:login_module/app/app_widget.dart';
 
 import 'modules/login/login_module.dart';
+import 'modules/login/store/login_store.dart';
 
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
         Bind((i) => AppController()),
+        Bind((i) => LoginStore()),
       ];
 
   @override

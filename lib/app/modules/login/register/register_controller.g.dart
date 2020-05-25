@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_controller.dart';
+part of 'register_controller.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'login_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$LoginController on _LoginControllerBase, Store {
-  final _$emailAtom = Atom(name: '_LoginControllerBase.email');
+mixin _$RegisterController on _RegisterControllerBase, Store {
+  final _$emailAtom = Atom(name: '_RegisterControllerBase.email');
 
   @override
   String get email {
@@ -24,7 +24,7 @@ mixin _$LoginController on _LoginControllerBase, Store {
     });
   }
 
-  final _$passwordAtom = Atom(name: '_LoginControllerBase.password');
+  final _$passwordAtom = Atom(name: '_RegisterControllerBase.password');
 
   @override
   String get password {
@@ -39,35 +39,35 @@ mixin _$LoginController on _LoginControllerBase, Store {
     });
   }
 
-  final _$loginAsyncAction = AsyncAction('_LoginControllerBase.login');
+  final _$loginAsyncAction = AsyncAction('_RegisterControllerBase.login');
 
   @override
   Future<dynamic> login() {
     return _$loginAsyncAction.run(() => super.login());
   }
 
-  final _$_LoginControllerBaseActionController =
-      ActionController(name: '_LoginControllerBase');
+  final _$_RegisterControllerBaseActionController =
+      ActionController(name: '_RegisterControllerBase');
 
   @override
   void setEmail(dynamic value) {
-    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
-        name: '_LoginControllerBase.setEmail');
+    final _$actionInfo = _$_RegisterControllerBaseActionController.startAction(
+        name: '_RegisterControllerBase.setEmail');
     try {
       return super.setEmail(value);
     } finally {
-      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+      _$_RegisterControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void setPassword(dynamic value) {
-    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
-        name: '_LoginControllerBase.setPassword');
+    final _$actionInfo = _$_RegisterControllerBaseActionController.startAction(
+        name: '_RegisterControllerBase.setPassword');
     try {
       return super.setPassword(value);
     } finally {
-      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+      _$_RegisterControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 

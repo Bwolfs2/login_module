@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'animation/fade_animation.dart';
-import 'login_controller.dart';
-import 'dart:math' as math;
+import 'package:login_module/app/modules/login/animation/fade_animation.dart';
+import 'package:login_module/app/modules/login/register/register_controller.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final String title;
-  const LoginPage({Key key, this.title = "Login"}) : super(key: key);
+  const RegisterPage({Key key, this.title = "Register"}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends ModularState<LoginPage, LoginController> {
-  //use 'controller' variable to access controller
-
+class _RegisterPageState
+    extends ModularState<RegisterPage, RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +76,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                             margin: EdgeInsets.only(top: 50),
                             child: Center(
                               child: Text(
-                                "Login",
+                                "Register",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 40,
@@ -116,7 +114,6 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                                       bottom:
                                           BorderSide(color: Colors.grey[100]))),
                               child: TextFormField(
-                                initialValue: "bwolfnoob@gmail.com",
                                 onChanged: controller.setEmail,
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
@@ -128,12 +125,23 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                             Container(
                               padding: EdgeInsets.all(8.0),
                               child: TextFormField(
-                                initialValue: "123456",
                                 obscureText: true,
                                 onChanged: controller.setPassword,
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: "Password",
+                                    hintStyle:
+                                        TextStyle(color: Colors.grey[400])),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8.0),
+                              child: TextFormField(
+                                obscureText: true,
+                                onChanged: controller.setConfirmPassword,
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Confirm Password",
                                     hintStyle:
                                         TextStyle(color: Colors.grey[400])),
                               ),
@@ -195,98 +203,3 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
     );
   }
 }
-
-//     return Scaffold(
-//       backgroundColor: Colors.blueGrey,
-//       body: SingleChildScrollView(
-//         child: Container(
-//           height: MediaQuery.of(context).size.height,
-//           child: Column(
-//             children: <Widget>[
-//               Expanded(
-//                 child: FlutterLogo(
-//                   colors: Colors.orange,
-//                   size: MediaQuery.of(context).size.height * .2,
-//                 ),
-//               ),
-//               Container(
-//                 padding: EdgeInsets.all(25),
-//                 height: MediaQuery.of(context).size.height * .5,
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   borderRadius: BorderRadius.only(
-//                     topRight: Radius.circular(30),
-//                     topLeft: Radius.circular(30),
-//                   ),
-//                 ),
-//                 child: Column(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: <Widget>[
-//                     TextFormField(
-//                       onChanged: controller.setEmail,
-//                       initialValue: "bwolfnoob@gmail.com",
-//                       decoration: InputDecoration(
-//                           border: OutlineInputBorder(), labelText: "Email"),
-//                     ),
-//                     SizedBox(
-//                       height: 20,
-//                     ),
-//                     TextFormField(
-//                       initialValue: "123456",
-//                       obscureText: true,
-//                       onChanged: controller.setPassword,
-//                       decoration: InputDecoration(
-//                         border: OutlineInputBorder(),
-//                         labelText: "Password",
-//                       ),
-//                     ),
-//                     SizedBox(
-//                       height: 20,
-//                     ),
-//                     Container(
-//                       width: double.infinity,
-//                       child: RaisedButton(
-//                         padding: EdgeInsets.all(15),
-//                         color: Colors.orange,
-//                         onPressed: () async {
-//                           await controller.login();
-//                         },
-//                         child: Text(
-//                           "Login",
-//                           style: TextStyle(
-//                             color: Colors.white,
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                     SizedBox(
-//                       height: 20,
-//                     ),
-//                     Container(
-//                       width: double.infinity,
-//                       child: FlatButton(
-//                         padding: EdgeInsets.all(15),
-//                         //color: Colors.orange,
-//                         textColor: Colors.orange,
-//                         onPressed: () async {
-//                           await Modular.link.pushNamed("/register");
-//                         },
-//                         child: Text(
-//                           "Register",
-//                           style: TextStyle(
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               )
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
