@@ -10,8 +10,8 @@ part 'login_controller.g.dart';
 class LoginController = _LoginControllerBase with _$LoginController;
 
 abstract class _LoginControllerBase with Store {
-  final LoginStore store;
-  _LoginControllerBase(this.store);
+  final LoginStore _store;
+  _LoginControllerBase(this._store);
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -37,7 +37,7 @@ abstract class _LoginControllerBase with Store {
           .user;
 
       print((await user.getIdToken()).token);
-      store.setToken((await user.getIdToken()).token);
+      _store.setToken((await user.getIdToken()).token);
     } catch (e) {
       Modular.to.showDialog(builder: (context) {
         return AlertDialog(

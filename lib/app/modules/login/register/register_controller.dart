@@ -9,8 +9,8 @@ part 'register_controller.g.dart';
 class RegisterController = _RegisterControllerBase with _$RegisterController;
 
 abstract class _RegisterControllerBase with Store {
-  final LoginStore store;
-  _RegisterControllerBase(this.store);
+  final LoginStore _store;
+  _RegisterControllerBase(this._store);
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -43,7 +43,7 @@ abstract class _RegisterControllerBase with Store {
             .user;
 
         print((await user.getIdToken()).token);
-        store.setToken((await user.getIdToken()).token);
+        _store.setToken((await user.getIdToken()).token);
       } catch (e) {
         Modular.to.showDialog(builder: (context) {
           return AlertDialog(
